@@ -19,7 +19,7 @@ Este repositório contém o código desenvolvido durante as aulas do curso, orga
 - **Aula 2:**
   - Branch: [`Aula_2_primeira_api`](https://github.com/seu-usuario/seu-repositorio/tree/Aula_2_primeira_api)
   - Conteúdo: Primeira API com FastAPI, rotas e execução do servidor
-  - Material: [Aula 2 - Primeira API](https://fastapidozero.dunossauro.com/estavel/02/)
+  - Material: [Aula_2_Primeira_API](https://fastapidozero.dunossauro.com/estavel/02/)
 
 ---
 
