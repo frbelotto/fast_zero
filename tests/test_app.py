@@ -8,6 +8,24 @@ def test_root_deve_retornar_ok_e_ola_mundo(client):
     assert response.json() == {'message': 'Olá Mundo!'}
 
 
+def test_root_html_deve_retornar_ok_e_ola_mundo(client):
+    response = client.get('/html')
+
+    assert response.status_code == HTTPStatus.OK
+    assert (
+        response.text
+        == """
+    <html>
+      <head>
+        <title> Nosso olá mundo!</title>
+      </head>
+      <body>
+        <h1> Olá Mundo </h1>
+      </body>
+    </html>"""
+    )  
+
+
 
 def test_create_user(client):
     response = client.post(
