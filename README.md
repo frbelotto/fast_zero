@@ -43,7 +43,7 @@ Acesse o conteúdo completo em: [https://fastapidozero.dunossauro.com/estavel/](
 
 > **Autor do curso:** [Dunossauro](https://github.com/dunossauro)
 
-> **Repositório mantido por:** [Seu Nome ou Usuário]
+> **Repositório mantido por:** [Fábio Belotto](https://github.com/frbelotto)
 
 ---
 
