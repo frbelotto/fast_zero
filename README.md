@@ -16,6 +16,10 @@ Este repositório contém o código desenvolvido durante as aulas do curso, orga
   - Branch: [`Aula_1_config_ambiente`](https://github.com/seu-usuario/seu-repositorio/tree/Aula_1_config_ambiente)
   - Conteúdo: Configuração do ambiente de desenvolvimento
   - Material: [Aula 1 - Configuração do Ambiente](https://fastapidozero.dunossauro.com/estavel/01/)
+- **Aula 2:**
+  - Branch: [`Aula_2_primeira_api`](https://github.com/seu-usuario/seu-repositorio/tree/Aula_2_primeira_api)
+  - Conteúdo: Primeira API com FastAPI, rotas e execução do servidor
+  - Material: [Aula 2 - Primeira API](https://fastapidozero.dunossauro.com/estavel/02/)
 
 ---
 
@@ -43,7 +47,7 @@ Acesse o conteúdo completo em: [https://fastapidozero.dunossauro.com/estavel/](
 
 > **Autor do curso:** [Dunossauro](https://github.com/dunossauro)
 
-> **Repositório mantido por:** [Seu Nome ou Usuário]
+> **Repositório mantido por:** [Fábio Belotto](https://github.com/frbelotto)
 
 ---
 
