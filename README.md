@@ -12,28 +12,165 @@ Este repositório contém o código desenvolvido durante as aulas do curso, orga
 
 ### 📚 Conteúdo das Aulas
 
-- **Aula 1:**
-  - Branch: [`Aula_1_config_ambiente`](https://github.com/seu-usuario/seu-repositorio/tree/Aula_1_config_ambiente)
-  - Conteúdo: Configuração do ambiente de desenvolvimento
-  - Material: [Aula 1 - Configuração do Ambiente](https://fastapidozero.dunossauro.com/estavel/01/)
-- **Aula 2:**
-  - Branch: [`Aula_2_primeira_api`](https://github.com/seu-usuario/seu-repositorio/tree/Aula_2_primeira_api)
-  - Conteúdo: Primeira API com FastAPI, rotas e execução do servidor
-  - Material: [Aula_2_Primeira_API](https://fastapidozero.dunossauro.com/estavel/02/)
+#### 🔧 Aula 1 - Configurando o Ambiente de Desenvolvimento
+- **Material:** [Aula 1 - Configuração do Ambiente](https://fastapidozero.dunossauro.com/estavel/01/)
+- **Status:** ✅ **COMPLETA**
+
+**Implementações realizadas:**
+- ✅ **Ambiente de desenvolvimento:** Python 3.13, Git configurados
+- ✅ **Gerenciador de pacotes:** UV (moderno substituto do Poetry)
+- ✅ **Estrutura do projeto:** Layout flat com fast_zero/ criado
+- ✅ **FastAPI:** Instalado com `[standard]` extras
+- ✅ **Ferramentas de desenvolvimento:**
+  - pytest (testes) e pytest-cov (cobertura)
+  - ruff (linting e formatação)
+  - taskipy (automação de tarefas)
+- ✅ **Configurações:**
+  - Ruff: line-length 79, aspas simples, regras I/F/E/W/PL/PT
+  - Pytest: pythonpath configurado, warnings suprimidos
+  - Taskipy: comandos lint, format, run, test com pré/pós hooks
+- ✅ **Hello World:** Endpoint `/` implementado e funcionando
+- ✅ **Primeiro teste:** Estrutura AAA (Arrange-Act-Assert)
+- ✅ **Cobertura de testes:** 100% alcançada
+- ✅ **Git:** Repositório inicializado com .gitignore
+- ✅ **Exercícios da aula:** Todos implementados
+
+#### 🌐 Aula 2 - Introdução ao Desenvolvimento WEB
+- **Material:** [Aula 2 - Introdução ao Desenvolvimento WEB](https://fastapidozero.dunossauro.com/estavel/02/)
+- **Status:** ✅ **COMPLETA**
+
+**Implementações realizadas:**
+- ✅ **Conceitos Web:** Cliente-servidor, URLs, HTTP compreendidos
+- ✅ **Protocolo HTTP:**
+  - Verbos GET/POST/PUT/DELETE implementados
+  - Status codes com HTTPStatus (boas práticas)
+  - Cabeçalhos e corpo de mensagens
+- ✅ **APIs e JSON:**
+  - Endpoint `/` retornando JSON
+  - Contratos de dados com schemas
+- ✅ **Pydantic integrado:**
+  - Schema `Message` criado e utilizado
+  - `response_model` configurado nos endpoints
+- ✅ **Documentação OpenAPI:**
+  - Swagger UI disponível em `/docs`
+  - ReDoc disponível em `/redoc`
+  - Schemas documentados automaticamente
+- ✅ **Endpoint HTML:** `/html` com HTMLResponse
+- ✅ **Testes completos:**
+  - Teste do endpoint JSON (`test_root_deve_retornar_ok_e_ola_mundo`)
+  - Teste do endpoint HTML (`test_root_html_deve_retornar_ok_e_ola_mundo`)
+- ✅ **Exercício da aula:** Endpoint HTML implementado e testado
+
+#### 📝 Aula 3 - Estruturando o Projeto e Criando Rotas CRUD
+- **Material:** [Aula 3 - Estruturando o Projeto e Criando Rotas CRUD](https://fastapidozero.dunossauro.com/estavel/03/)
+- **Status:** ✅ **COMPLETA**
+
+**Implementações realizadas:**
+- ✅ Rotas CRUD completas (POST, GET, PUT, DELETE)
+- ✅ Modelos Pydantic com validação (UserSchema, UserPublic, UserDB, UserList)
+- ✅ Validação de email com EmailStr
+- ✅ Sistema de banco de dados simulado em memória
+- ✅ Testes automatizados para todas as rotas (cobertura 100%)
+- ✅ Fixture pytest para reutilização do cliente de teste
+- ✅ Tratamento de erros HTTP (404 NOT FOUND)
+- ✅ Endpoint GET para buscar usuário específico
+- ✅ Exercícios propostos na aula executados
+
+---
+
+## 🚀 Instalação e Execução
+
+### Pré-requisitos
+- Python 3.13+
+- UV (gerenciador de pacotes moderno para Python)
+
+### Setup do Projeto
+
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd fast_zero
+   ```
+
+2. **Instale as dependências:**
+   ```bash
+   uv sync
+   ```
+
+3. **Execute os testes:**
+   ```bash
+   uv run pytest -s -x --cov=fast_zero -vv
+   ```
+
+4. **Execute o linting:**
+   ```bash
+   uv run ruff check
+   ```
+
+5. **Formate o código:**
+   ```bash
+   uv run ruff format
+   ```
+
+6. **Execute a aplicação:**
+   ```bash
+   uv run fastapi dev fast_zero/app.py
+   ```
+
+### 📊 Status dos Testes
+- **Cobertura:** 100%
+- **Total de testes:** 10
+- **Status:** ✅ Todos passando
+
+### 📖 Documentação da API
+Com a aplicação rodando, acesse:
+- **Swagger UI:** http://127.0.0.1:8000/docs
+- **ReDoc:** http://127.0.0.1:8000/redoc
 
 ---
 
 ## Como utilizar este repositório
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   ```
-2. **Acesse a branch desejada:**
-   ```bash
-   git checkout Aula_1_config_ambiente
-   ```
-3. **Siga as instruções de cada aula para executar os exemplos.**
+## 📋 Como utilizar este repositório
+
+### Navegação por Aulas
+- **Aula 1-3:** Código atual (main branch)
+- Para aulas futuras, branches específicas serão criadas
+
+### Comandos Úteis
+
+**Usando UV (recomendado):**
+```bash
+# Instalar dependências
+uv sync
+
+# Executar testes
+uv run pytest -s -x --cov=fast_zero -vv
+
+# Executar aplicação
+uv run fastapi dev fast_zero/app.py
+
+# Linting
+uv run ruff check
+
+# Formatação
+uv run ruff format
+```
+
+**Usando taskipy (alternativo):**
+```bash
+# Executar testes
+uv run task test
+
+# Executar aplicação  
+uv run task run
+
+# Linting
+uv run task lint
+
+# Formatação
+uv run task format
+```
 
 ---
 
