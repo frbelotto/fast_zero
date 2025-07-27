@@ -66,17 +66,56 @@ Este repositório contém o código desenvolvido durante as aulas do curso, orga
 - **Status:** ✅ **COMPLETA**
 
 **Implementações realizadas:**
-- ✅ Rotas CRUD completas (POST, GET, PUT, DELETE)
-- ✅ Modelos Pydantic com validação (UserSchema, UserPublic, UserDB, UserList)
-- ✅ Validação de email com EmailStr
-- ✅ Sistema de banco de dados simulado em memória
-- ✅ Testes automatizados para todas as rotas (cobertura 100%)
-- ✅ Fixture pytest para reutilização do cliente de teste
-- ✅ Tratamento de erros HTTP (404 NOT FOUND)
-- ✅ Endpoint GET para buscar usuário específico
-- ✅ Exercícios propostos na aula executados
+- ✅ **Sistema CRUD completo:**
+  - POST `/users/` para criar usuários
+  - GET `/users/` para listar usuários
+  - PUT `/users/{user_id}` para atualizar usuários
+  - DELETE `/users/{user_id}` para remover usuários
+  - GET `/users/{user_id}` para buscar usuário específico
+- ✅ **Modelos de dados:**
+  - UserSchema: modelo de entrada
+  - UserPublic: modelo de saída
+  - UserDB: modelo do banco
+  - UserList: modelo para listagem
+- ✅ **Validações:**
+  - Email com EmailStr
+  - Campos obrigatórios
+  - Respostas HTTP adequadas
+- ✅ **Testes:**
+  - Cobertura 100%
+  - Fixture de cliente de teste
+  - Testes de sucesso e erro
+- ✅ **Exercícios da aula:** Todos implementados
 
----
+#### 🗄️ Aula 4 - Banco de Dados e Migrações
+- **Material:** [Aula 4 - Banco de Dados e Migrações](https://fastapidozero.dunossauro.com/estavel/04/)
+- **Status:** ✅ **COMPLETA**
+
+**Implementações realizadas:**
+- ✅ **SQLAlchemy configurado:**
+  - Modelos com Mapped columns
+  - Registro de tabelas com registry
+  - Tipos de dados apropriados
+- ✅ **Modelo User aprimorado:**
+  - Campos únicos (email, username)
+  - Campos automáticos (id, created_at, updated_at)
+  - Configurações de colunas otimizadas
+- ✅ **Ambiente de banco:**
+  - Settings com pydantic-settings
+  - Configuração via .env
+  - URL do banco configurável
+- ✅ **Alembic configurado:**
+  - Inicialização correta
+  - Migração inicial criada
+  - Migração para novos campos
+- ✅ **Testes do banco:**
+  - Fixture de sessão SQLite em memória
+  - Mock de tempo para testes determinísticos
+  - Validação completa de objetos
+- ✅ **Exercícios da aula:** Todos implementados
+  - Campo updated_at adicionado
+  - Eventos ORM configurados
+  - Testes adaptados
 
 ## 🚀 Instalação e Execução
 
