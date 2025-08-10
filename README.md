@@ -1,4 +1,4 @@
-# FastAPI do Zero 🚀
+# FastAPI do Zero 🚀 #
 
 Bem-vindo ao repositório de estudos e execução do curso **FastAPI do Zero**, ministrado por [Dunossauro](https://github.com/dunossauro)!
 
