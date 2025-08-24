@@ -17,9 +17,7 @@ def test_create_user(session, mock_db_time):
         session.add(new_user)
         session.commit()
 
-    user = session.scalar(
-        select(User).where(User.username == new_user.username)
-    )
+    user = session.scalar(select(User).where(User.username == new_user.username))
     assert asdict(user) == {
         'id': 1,
         'username': 'testuser',
@@ -28,5 +26,3 @@ def test_create_user(session, mock_db_time):
         'created_at': time,
         'updated_at': time,
     }
-
-    # parei aqui https://www.youtube.com/watch?v=I7IrmN7jMqE&t=4321s

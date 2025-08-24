@@ -117,6 +117,35 @@ Este repositório contém o código desenvolvido durante as aulas do curso, orga
   - Eventos ORM configurados
   - Testes adaptados
 
+#### 🔌 Aula 5 - Integrando Banco de Dados à API
+- **Material:** [Aula 5 - Integrando Banco de Dados à API](https://fastapidozero.dunossauro.com/estavel/05/)
+- **Status:** ✅ **COMPLETA**
+
+**Implementações realizadas:**
+- ✅ **Integração SQLAlchemy-FastAPI:**
+  - Função `get_session` para gerenciamento de sessões
+  - Injeção de dependências com `Depends`
+  - Configuração thread-safe para testes
+- ✅ **Endpoints atualizados:**
+  - POST `/users/` com validação de duplicados
+  - GET `/users/` com paginação (limit/offset)
+  - PUT `/users/{id}` com tratamento de conflitos
+  - DELETE `/users/{id}` integrado ao banco
+  - GET `/users/{id}` com busca real
+- ✅ **Schemas aprimorados:**
+  - Integração Pydantic-SQLAlchemy
+  - ConfigDict com from_attributes
+  - Remoção de schemas não utilizados
+- ✅ **Testes robustos:**
+  - Fixture de sessão SQLite
+  - Fixture de usuário para testes
+  - Testes de conflitos e erros
+  - Cobertura de 98%
+- ✅ **Exercícios da aula:** Todos implementados
+  - Testes de duplicidade
+  - Validações de conflitos
+  - Endpoints atualizados
+
 ## 🚀 Instalação e Execução
 
 ### Pré-requisitos
@@ -157,8 +186,8 @@ Este repositório contém o código desenvolvido durante as aulas do curso, orga
    ```
 
 ### 📊 Status dos Testes
-- **Cobertura:** 100%
-- **Total de testes:** 10
+- **Cobertura:** 98%
+- **Total de testes:** 15
 - **Status:** ✅ Todos passando
 
 ### 📖 Documentação da API
@@ -173,7 +202,7 @@ Com a aplicação rodando, acesse:
 ## 📋 Como utilizar este repositório
 
 ### Navegação por Aulas
-- **Aula 1-3:** Código atual (main branch)
+- **Aula 1-5:** Código atual (main branch)
 - Para aulas futuras, branches específicas serão criadas
 
 ### Comandos Úteis
