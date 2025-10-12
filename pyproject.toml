@@ -3,12 +3,15 @@ name = "fast-zero"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<3.14"
 dependencies = [
     "alembic>=1.16.4",
     "fastapi[standard]>=0.115.12",
+    "pwdlib[argon2]>=0.2.1",
     "pydantic-settings>=2.10.1",
+    "pyjwt>=2.10.1",
     "sqlalchemy>=2.0.41",
+    "tzdata>=2025.2",
 ]
 
 [dependency-groups]
@@ -22,7 +25,7 @@ dev = [
 
 
 [tool.ruff]
-line-length =  170
+line-length =  150
 extend-exclude = ['migrations']
 
 [tool.ruff.lint]
@@ -48,3 +51,4 @@ run = 'fastapi dev fast_zero/app.py'
 pre_test = 'task lint'
 test = 'pytest -s -x --cov=fast_zero -vv'
 post_test = 'coverage html'
+                                                                                                                           

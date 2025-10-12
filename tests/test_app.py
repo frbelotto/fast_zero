@@ -1,5 +1,6 @@
-# continuar daqui ! https://www.youtube.com/live/bm7_rA7NOB4?si=fqP8DJV3syAWpWkO&t=4869
-
+#    import logging - Código que permite visualizar o output do response no terminal
+#     logger = logging.getLogger(__name__)
+#     logger.error(f'Response: {response.json()}')
 
 from http import HTTPStatus
 
@@ -48,10 +49,10 @@ def test_create_user(client):
     }
 
 
-def test_read_users(client):
+def test_read_users_without_token(client):
     response = client.get('/users/')
-    assert response.status_code == HTTPStatus.OK
-    assert response.json() == {'users': []}
+    assert response.status_code == HTTPStatus.UNAUTHORIZED
+    assert response.json() == {'detail': 'Not authenticated'}
 
 
 def test_read_user(client):
@@ -74,16 +75,17 @@ def test_read_user(client):
     }
 
 
-def test_read_users_with_users(client, user):
+def test_read_users_with_users(client, user, token):
     user_schema = UserPublic.model_validate(user).model_dump()
-    response = client.get('/users/')
+    response = client.get('/users/', headers={'Authorization': f'Bearer {token}'})
     assert response.status_code == HTTPStatus.OK
     assert response.json() == {'users': [user_schema]}
 
 
-def test_update_user(client, user):
+def test_update_user(client, user, token):
     response = client.put(
         '/users/1',
+        headers={'Authorization': f'Bearer {token}'},
         json={
             'username': 'bob',
             'email': 'bob@example.com',
@@ -161,15 +163,14 @@ def test_update_user_not_found(client):
             'password': 'mynewpassword',
         },
     )
-    assert response.status_code == HTTPStatus.NOT_FOUND
-    assert response.json() == {'detail': 'User not found'}
+    assert response.status_code == HTTPStatus.UNAUTHORIZED
+    assert response.json() == {'detail': 'Not authenticated'}
 
 
-def test_update_integrity_error(client, user):
-    # Inserindo fausto
-    # username='Teste', email='teste@test.com', password='testtest'
+def test_update_integrity_error(client, user, token):
     client.post(
         '/users',
+        # headers={'Authorization': f'Bearer {token}'},
         json={
             'username': 'fausto',
             'email': 'fausto@example.com',
@@ -179,6 +180,7 @@ def test_update_integrity_error(client, user):
     # Alterando o user das fixture para fausto
     response = client.put(
         f'/users/{user.id}',
+        headers={'Authorization': f'Bearer {token}'},
         json={
             'username': 'fausto',
             'email': 'teste@test.coam',
@@ -189,20 +191,17 @@ def test_update_integrity_error(client, user):
     assert response.status_code == HTTPStatus.CONFLICT
     assert response.json() == {'detail': 'Username or Email already exists'}
 
-    # import logging
 
-    # logger = logging.getLogger(__name__)
-    # logger.error(f'Response: {response.json()}')
-
-
-def test_delete_user(client, user):
-    response = client.delete('/users/1')
+def test_delete_user(client, user, token):
+    response = client.delete(f'/users/{user.id}', headers={'Authorization': f'Bearer {token}'})
 
     assert response.status_code == HTTPStatus.OK
     assert response.json() == {'message': 'User deleted'}
 
 
-def test_delete_user_not_found(client):
-    response = client.delete('/users/999')
-    assert response.status_code == HTTPStatus.NOT_FOUND
-    assert response.json() == {'detail': 'User not found'}
+def test_get_token(client, user):
+    response = client.post('/token', data={'username': user.email, 'password': user.clean_password})
+    token = response.json()
+    assert response.status_code == HTTPStatus.OK
+    assert 'access_token' in token
+    assert token.get('token_type') == 'bearer'
